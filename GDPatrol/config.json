@@ -1,0 +1,216 @@
+{
+  "types": {
+    "type": [
+      {
+        "type": "Backdoor:EC2/C&CActivity.B!DNS",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Backdoor:EC2/Spambot",
+        "actions": ["blacklist_ip", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Backdoor:EC2/XORDDOS",
+        "actions": ["blacklist_ip", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Behavior:EC2/NetworkPortUnusual",
+        "actions": ["blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "Behavior:EC2/TrafficVolumeUnusual",
+        "actions": ["blacklist_ip", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "CryptoCurrency:EC2/BitcoinTool.B!DNS",
+        "actions": ["blacklist_domain", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "PenTest:IAMUser/KaliLinux",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Persistence:IAMUser/NetworkPermissions",
+        "actions": "disable_sg_access",
+        "reliability": 5
+      },
+      {
+        "type": "Persistence:IAMUser/ResourcePermissions",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Persistence:IAMUser/UserPermissions",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:EC2/PortProbeUnprotectedPort",
+        "actions": ["blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:EC2/Portscan",
+        "actions": ["snapshot_instance", "asg_detach_instance", "quarantine_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:IAMUser/MaliciousIPCaller",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:IAMUser/MaliciousIPCaller.Custom",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:IAMUser/NetworkPermissions",
+        "actions": ["disable_sg_access"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:IAMUser/ResourcePermissions",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:IAMUser/TorIPCaller",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Recon:IAMUser/UserPermissions",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "ResourceConsumption:IAMUser/ComputeResources",
+        "actions": ["disable_ec2_access"],
+        "reliability": 5
+      },
+      {
+        "type": "Stealth:IAMUser/CloudTrailLoggingDisabled",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Stealth:IAMUser/LoggingConfigurationModified",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Stealth:IAMUser/PasswordPolicyChange",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/BlackholeTraffic",
+        "actions": ["blacklist_ip", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/BlackholeTraffic!DNS",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/DGADomainRequest.B",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/DGADomainRequest.C!DNS",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/DNSDataExfiltration",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/DriveBySourceTraffic!DNS",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/DropPoint",
+        "actions": ["blacklist_ip", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/DropPoint!DNS",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "Trojan:EC2/PhishingDomainRequest!DNS",
+        "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:EC2/MaliciousIPCaller.Custom",
+        "actions": ["blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:EC2/RDPBruteForce",
+        "actions": ["blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:EC2/SSHBruteForce",
+        "actions": ["blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:EC2/TorIPCaller",
+        "actions": ["blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/ConsoleLogin",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/ConsoleLoginSuccess.B",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/InstanceCredentialExfiltration",
+        "actions": ["disable_account"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/MaliciousIPCaller",
+        "actions": ["disable_account", "blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/MaliciousIPCaller.Custom",
+        "actions": ["disable_account", "blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/TorIPCaller",
+        "actions": ["disable_account", "blacklist_ip"],
+        "reliability": 5
+      },
+      {
+        "type": "UnauthorizedAccess:IAMUser/UnusualASNCaller",
+        "actions": ["disable_account"],
+        "reliability": 5
+      }
+    ]
+  }
+}

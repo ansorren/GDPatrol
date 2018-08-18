@@ -1,0 +1,47 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:CreateSnapshot",
+        "iam:PutUserPolicy",
+        "iam:DeleteUserPolicy",
+        "ec2:DeleteNetworkAclEntry",
+        "autoscaling:DetachInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*::snapshot/*",
+        "arn:aws:ec2:*:*:volume/*",
+        "arn:aws:ec2:*:*:security-group/*",
+        "arn:aws:ec2:*:*:network-acl/*",
+        "arn:aws:iam::*:user/*",
+        "arn:aws:autoscaling:*:*:autoScalingGroup:*:autoScalingGroupName/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DescribeAutoScalingInstances",
+        "ec2:CreateSecurityGroup",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:CreateNetworkAclEntry",
+        "ec2:DescribeNetworkAcls"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": [
+        "arn:aws:logs:*:*:*"
+      ]
+    }
+  ]
+}
