@@ -1,7 +1,8 @@
 # GDPatrol
 
 A Serverless Security Orchestration Automation and Response (SOAR) Framework for AWS GuardDuty.
-The GDPatrol Lambda function receives the GuardDuty findings through the CloudWatch Event Rule and execute the appropriate actions to mitigate the threats according to their types and severity.
+The GDPatrol Lambda function receives the GuardDuty findings through the CloudWatch Event Rule and executes
+the appropriate actions to mitigate the threats according to their types and severity.
 
 Supported actions:
 
@@ -37,7 +38,7 @@ care of everything else.
 * Boto3 
 
 ### Installing
-Clone the project and just run the deployment file
+Clone the project and just run the deployment file:
 ```
 python3 deploy.py
 ```
