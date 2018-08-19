@@ -5,6 +5,7 @@
       "Effect": "Allow",
       "Action": [
         "ec2:RevokeSecurityGroupEgress",
+        "ec2:DescribeInstances",
         "ec2:CreateSnapshot",
         "iam:PutUserPolicy",
         "iam:DeleteUserPolicy",
