@@ -14,8 +14,6 @@ def blacklist_ip(ip_address):
     try:
         client = boto3.client('ec2')
         nacls = client.describe_network_acls()
-        print("blacklist_ip {} ".format(ip_address))
-        print(nacls["NetworkAcls"])
         for nacl in nacls["NetworkAcls"]:
             min_rule_id = min(
                 rule['RuleNumber'] for rule in nacl["Entries"] if not rule["Egress"]
