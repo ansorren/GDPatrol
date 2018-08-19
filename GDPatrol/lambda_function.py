@@ -277,6 +277,7 @@ def lambda_handler(event, context):
     total_config_actions = len(config_actions)
     actions_to_be_executed = 0
     for action in config_actions:
+        logger.info("Action: {}".format(action))
         if action == 'blacklist_ip':
             if severity + config_reliability > 10:
                 actions_to_be_executed += 1
