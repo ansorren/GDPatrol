@@ -242,12 +242,12 @@ class Config(object):
 
 
 def lambda_handler(event, context):
-    logger.info(event)
+    logger.info("GDPatrol: Received JSON event - ".format(event))
     try:
 
         finding_id = event['id']
         finding_type =  event['type']
-        logger.info("GDPatrol: received Finding ID: {} - Finding Type: {}".format(finding_id, finding_type))
+        logger.info("GDPatrol: Parsed Finding ID: {} - Finding Type: {}".format(finding_id, finding_type))
         config = Config(event['type'])
         severity = int(event['severity'])
 
