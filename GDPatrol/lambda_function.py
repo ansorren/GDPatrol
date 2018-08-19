@@ -255,7 +255,7 @@ def lambda_handler(event, context):
         config_reliability = config.get_reliability()
         resource_type = event['resource']['resourceType']
     except KeyError as e:
-        logger.error("Could not parse the Finding fields correctly, please verify that the JSON is correct")
+        logger.error("GDPatrol: Could not parse the Finding fields correctly, please verify that the JSON is correct")
         exit(1)
     if resource_type == 'Instance':
         instance = event['resource']['instanceDetails']
@@ -277,7 +277,7 @@ def lambda_handler(event, context):
     total_config_actions = len(config_actions)
     actions_to_be_executed = 0
     for action in config_actions:
-        logger.info("Action: {}".format(action))
+        logger.info("GDPatrol: Action: {}".format(action))
         if action == 'blacklist_ip':
             if severity + config_reliability > 10:
                 actions_to_be_executed += 1
@@ -299,7 +299,7 @@ def lambda_handler(event, context):
                     result = blacklist_ip(ip_address)
                     successful_actions += int(result)
                 except gaierror as e:
-                    logger.error("Error resolving domain {} - {}".format(domain, e))
+                    logger.error("GDPatrol: Error resolving domain {} - {}".format(domain, e))
                     pass
         elif action == 'quarantine_instance':
             if severity + config_reliability > 10:
