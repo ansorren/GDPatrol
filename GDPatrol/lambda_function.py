@@ -227,7 +227,7 @@ class Config(object):
     def get_actions(self):
         with open('config.json', 'r') as config:
             jsonloads = json.loads(config.read())
-            for item in jsonloads['types']['type']:
+            for item in jsonloads['playbooks']['playbook']:
                 if item['type'] == self.finding_type:
                     self.actions = item['actions']
                     return self.actions
@@ -235,7 +235,7 @@ class Config(object):
     def get_reliability(self):
         with open('config.json', 'r') as config:
             jsonloads = json.loads(config.read())
-            for item in jsonloads['types']['type']:
+            for item in jsonloads['playbooks']['playbook']:
                 if item['type'] == self.finding_type:
                     self.reliability = int(item['reliability'])
                     return self.reliability

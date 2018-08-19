@@ -1,6 +1,6 @@
 {
-  "types": {
-    "type": [
+  "playbooks": {
+    "playbook": [
       {
         "type": "Backdoor:EC2/C&CActivity.B!DNS",
         "actions": ["blacklist_domain", "asg_detach_instance", "quarantine_instance", "snapshot_instance"],
