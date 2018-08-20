@@ -70,5 +70,6 @@ def run():
         Principal='events.amazonaws.com',
         SourceArn=created_rule['RuleArn']
     )
+    print("Successfully deployed the GDPatrol lambda function.")
 if __name__ == '__main__':
     run()

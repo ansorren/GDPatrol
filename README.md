@@ -14,7 +14,7 @@ Supported actions:
 * disable_account (disable every action for a particular account)
 * disable_ec2_access
 * enable_ec2_access
-* disable_dg_access (Disable Security Group Access)
+* disable_sg_access (Disable Security Group Access)
 * enable_sg_access
 * asg_detach_instance (detach instance from an auto scaling group)
 
