@@ -3,6 +3,8 @@
 A Serverless Security Orchestration Automation and Response (SOAR) Framework for AWS GuardDuty.
 The GDPatrol Lambda function receives the GuardDuty findings through the CloudWatch Event Rule and executes
 the appropriate actions to mitigate the threats according to their types and severity.
+The deployment script will enable GuardDuty and deploy the GDPatrol Lambda function in all 
+supported regions.
 
 Supported actions:
 
@@ -32,8 +34,6 @@ The actions to be executed are configured in the config.json file:
 
 ### Prerequisites
 
-AWS GuardDuty must be enabled in the AWS region where GDPatrol is deployed. The deployment script will take 
-care of everything else.
 * Python 3.6 (should be compatible with 2.7 as well but I didn't test it)
 * Boto3 
 
@@ -52,6 +52,9 @@ List Functions, Delete Function, Create Function, Add Permission
 
 CloudWatch Events:
 List Rules, List Targets By Rule, Remove Targets, Delete Rule, Put Rule, Put Targets
+
+GuardDuty:
+List Detectors, Create Detector, Update Detector
 ```
 
 ## Configuration
@@ -83,3 +86,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Most of the actions code was adapted from the AWS Phantom app published by Booz Allen Hamilton.
 
 
+**Note:** By enabling GuardDuty, you might incur in additional costs. However, since the service is
+billed per log consumption usage, the cost should be irrelevant for the regions you're not actively using,
+so there's no reason to leave it off as you will want to monitor unused regions as well. See GuardDuty pricing
+for more details.
