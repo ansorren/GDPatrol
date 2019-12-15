@@ -45,18 +45,18 @@ def run():
         else:
             gd.update_detector(DetectorId=gd.list_detectors()['DetectorIds'][0], Enable=True)
             print("Detector already exists: {}".format(gd.list_detectors()['DetectorIds'][0]))
-        lambda_functions = lmb.list_functions()['Functions']
-        for lambda_function in lambda_functions:
-            if lambda_function['FunctionName'] == 'GDPatrol':
-                lmb.delete_function(FunctionName='GDPatrol')
 
+        try:
+            lmb.get_function(FunctionName='GDPatrol')
+            lmb.delete_function(FunctionName='GDPatrol')
+        except:
+            pass
         lambda_response = lmb.create_function(FunctionName='GDPatrol',
                                        Runtime='python3.6',
                                        Role=lambda_role_arn,
                                        Handler='lambda_function.lambda_handler',
                                        Code={'ZipFile': open(zipped, 'rb').read()},
                                        Timeout=300, MemorySize=128)
-
         target_arn = lambda_response['FunctionArn']
         target_id = 'Id' + str(randrange(10 ** 11, 10 ** 12))
 
